@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jb-codegen-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../schema/jb-codegen-mapping.xsd">
+	<entity class="org.jb.model.Catalogo">
+		<jb-entity collectionLabel="Catalogos" icon="" label="Catalogo" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-attribute>
+				<order>0</order>
+				<name>Identificador</name>
+				<id>true</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="nome" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-attribute>
+				<order>1</order>
+				<name>Nome</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="descricao" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-attribute>
+				<order>2</order>
+				<name>Descrição</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="produtos" type="java.util.List"
+			enclosing-type="org.jb.model.Produto">
+			<jb-attribute>
+				<order>3</order>
+				<name>Produtos</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<method name="getNome" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-description>
+				<value>PRIMARY</value>
+			</jb-description>
+		</method>
+		<method name="getDescricao" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-description>
+				<value>SECONDARY</value>
+			</jb-description>
+		</method>
+		<method enclosing-type="void" name="adicionarProduto" type="void">
+			<jb-action>
+				<order>1</order>
+				<name>Adicionar Produto</name>
+			</jb-action>
+			<parameter enclosing-type="org.jb.model.Produto" name="produto"
+				type="org.jb.model.Produto">
+				<jb-parameter>
+					<order>1</order>
+					<name>Produto</name>
+				</jb-parameter>
+			</parameter>
+		</method>
+	</entity>
+	<entity class="org.jb.model.Cliente">
+		<jb-entity collectionLabel="Clientes" icon="" label="Cliente" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-attribute>
+				<order>0</order>
+				<name>Identificador</name>
+				<id>true</id>
+				<views>
+					<kind-view>DETAIL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="nome" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-attribute>
+				<order>1</order>
+				<name>Nome</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="sexo" type="org.jb.model.Sexo"
+			enclosing-type="org.jb.model.Sexo">
+			<jb-attribute>
+				<order>2</order>
+				<name>Sexo</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="dataNascimento" type="java.util.Date"
+			enclosing-type="java.util.Date">
+			<jb-attribute>
+				<order>3</order>
+				<name>Data de Nascimento</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+			<jb-temporal>
+				<value>DATE</value>
+			</jb-temporal>
+		</attribute>
+		<attribute name="pedidos" type="java.util.List"
+			enclosing-type="org.jb.model.Pedido">
+			<jb-attribute>
+				<order>4</order>
+				<name>Pedidos</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<method name="getId" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-description>
+				<value>PRIMARY</value>
+			</jb-description>
+		</method>
+		<method name="getNome" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-description>
+				<value>SECONDARY</value>
+			</jb-description>
+		</method>
+	</entity>
+	<entity class="org.jb.model.Item">
+		<jb-entity collectionLabel="Itens" icon="" label="Item" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-attribute>
+				<order>0</order>
+				<name>Identificador</name>
+				<id>true</id>
+				<views>
+					<kind-view>DETAIL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="pedido" type="org.jb.model.Pedido"
+			enclosing-type="org.jb.model.Pedido">
+			<jb-attribute>
+				<order>1</order>
+				<name>Pedido</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="produto" type="org.jb.model.Produto"
+			enclosing-type="org.jb.model.Produto">
+			<jb-attribute>
+				<order>2</order>
+				<name>Produto</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="quantidade" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-attribute>
+				<order>3</order>
+				<name>Quantidade</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="valor" type="java.lang.Double"
+			enclosing-type="java.lang.Double">
+			<jb-attribute>
+				<order>4</order>
+				<name>Valor</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<method name="getProduto" type="org.jb.model.Produto"
+			enclosing-type="org.jb.model.Produto">
+			<jb-description>
+				<value>PRIMARY</value>
+			</jb-description>
+		</method>
+		<method name="getQuantidade" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-description>
+				<value>SECONDARY</value>
+			</jb-description>
+		</method>
+	</entity>
+	<entity class="org.jb.model.Pedido">
+		<jb-entity collectionLabel="Pedidos" icon="" label="Pedido" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-attribute>
+				<order>0</order>
+				<name>Identificador</name>
+				<id>true</id>
+				<views>
+					<kind-view>DETAIL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="cliente" type="org.jb.model.Cliente"
+			enclosing-type="org.jb.model.Cliente">
+			<jb-attribute>
+				<order>1</order>
+				<name>Cliente</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="data" type="java.util.Date" enclosing-type="java.util.Date">
+			<jb-attribute>
+				<order>2</order>
+				<name>Data</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+			<jb-temporal>
+				<value>DATE</value>
+			</jb-temporal>
+		</attribute>
+		<attribute name="situacao" type="org.jb.model.SituacaoPedido"
+			enclosing-type="org.jb.model.SituacaoPedido">
+			<jb-attribute>
+				<order>3</order>
+				<name>Situação</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="itens" type="java.util.List"
+			enclosing-type="org.jb.model.Item">
+			<jb-attribute>
+				<order>4</order>
+				<name>Itens</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<method name="getCliente" type="org.jb.model.Cliente"
+			enclosing-type="org.jb.model.Cliente">
+			<jb-description>
+				<value>PRIMARY</value>
+			</jb-description>
+		</method>
+		<method name="getData" type="java.util.Date" enclosing-type="java.util.Date">
+			<jb-description>
+				<value>SECONDARY</value>
+			</jb-description>
+		</method>
+	</entity>
+	<entity class="org.jb.model.Produto">
+		<jb-entity collectionLabel="Produtos" icon="" label="Produto" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<jb-attribute>
+				<order>0</order>
+				<name>Identificador</name>
+				<id>true</id>
+				<views>
+					<kind-view>DETAIL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="descricao" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-attribute>
+				<order>1</order>
+				<name>Descrição</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="valor" type="java.lang.Double"
+			enclosing-type="java.lang.Double">
+			<jb-attribute>
+				<order>2</order>
+				<name>Valor</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<attribute name="catalogos" type="java.util.List"
+			enclosing-type="org.jb.model.Catalogo">
+			<jb-attribute>
+				<order>3</order>
+				<name>Catalogos</name>
+				<id>false</id>
+				<views>
+					<kind-view>ALL</kind-view>
+				</views>
+			</jb-attribute>
+		</attribute>
+		<method name="getDescricao" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<jb-description>
+				<value>PRIMARY</value>
+			</jb-description>
+		</method>
+		<method name="getValor" type="java.lang.Double"
+			enclosing-type="java.lang.Double">
+			<jb-description>
+				<value>SECONDARY</value>
+			</jb-description>
+		</method>
+	</entity>
+	<enumeration enum="org.jb.model.Perfil">
+		<jb-enumeration />
+	</enumeration>
+	<enumeration enum="org.jb.model.SituacaoPedido">
+		<jb-enumeration />
+	</enumeration>
+	<enumeration enum="org.jb.model.Sexo">
+		<jb-enumeration />
+	</enumeration>
+</jb-codegen-mapping>

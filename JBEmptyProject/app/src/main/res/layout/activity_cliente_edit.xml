@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="app.jb.generated.ClienteEditActivity" >
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingBottom="@dimen/activity_vertical_margin"
+			android:paddingLeft="@dimen/activity_horizontal_margin"
+			android:paddingRight="@dimen/activity_horizontal_margin"
+			android:paddingTop="@dimen/activity_vertical_margin">
+			<TextView
+				android:id="@+id/clienteEditActivityTextViewTitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="20dp"
+				android:layout_alignParentTop="true"
+				android:text="@string/activity_title_cliente_edit"
+				android:textStyle="bold"
+				android:textAppearance="?android:attr/textAppearanceMedium" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:layout_below="@id/clienteEditActivityTextViewTitle">
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/clienteEditActivityLabelJBAttributeTextViewLabelNome"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_cliente_attribute_nome"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<EditText
+					android:id="@+id/clienteEditActivityJBAttributeEditTextNome"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:inputType="text"
+					android:hint=""
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+		</LinearLayout>
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/clienteEditActivityLabelJBAttributeTextViewLabelSexo"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_cliente_attribute_sexo"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<Spinner
+					android:id="@+id/clienteEditActivityJBAttributeSpinnerSexo"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:text="" />
+		</LinearLayout>
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/clienteEditActivityLabelJBAttributeTextViewLabelDataNascimento"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_cliente_attribute_datanascimento"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<EditText
+					android:id="@+id/clienteEditActivityJBAttributeEditTextDataNascimento"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:inputType=""
+					android:onClick="selectDate"
+					android:focusableInTouchMode="false"
+					android:hint=""
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+		</LinearLayout>
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/clienteEditActivityLabelJBAttributeTextViewLabelPedidos"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_cliente_attribute_pedidos"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:padding="1dp"
+					android:background="#cccccc">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:background="#ffffff"
+						android:layout_weight="1"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/clienteEditActivityJBAttributeTextViewCollectionPedidos"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:padding="5dp"
+							android:layout_weight="1"
+							android:text="@string/element_action_collection"
+							android:textStyle="italic"
+							android:textAppearance="?android:attr/textAppearanceMedium" />
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:src="@android:drawable/ic_menu_more" />
+					</LinearLayout>
+				</LinearLayout>
+		</LinearLayout>
+			</LinearLayout>
+		</RelativeLayout>
+	</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="app.jb.generated.ProdutoFindResultListActivity">
+		<item
+			android:id="@+id/context_menu_find_result_list_produto_activity_action_detail"
+			android:orderInCategory="100"
+			android:title="@string/menu_action_select"
+		/>
+		<item
+			android:id="@+id/context_menu_find_result_list_produto_activity_action_edit"
+			android:orderInCategory="100"
+			android:title="@string/menu_action_edit"
+		/>
+		<item
+			android:id="@+id/context_menu_find_result_list_produto_activity_action_delete"
+			android:orderInCategory="100"
+			android:title="@string/menu_action_delete"
+		/>
+</menu>

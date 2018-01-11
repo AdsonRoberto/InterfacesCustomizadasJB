@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jb-stream-configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="../schema/jb-stream-configuration.xsd">
+	
+    <!-- Properties -->
+	<property name="mapping-type" value="xml"/>
+	
+    <!-- Mapping Files -->
+	<mapping resource="jb-stream-mapping.xml"/>
+	
+</jb-stream-configuration>

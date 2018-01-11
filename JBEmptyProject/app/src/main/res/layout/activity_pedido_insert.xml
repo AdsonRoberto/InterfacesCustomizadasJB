@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="app.jb.generated.PedidoInsertActivity" >
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingBottom="@dimen/activity_vertical_margin"
+			android:paddingLeft="@dimen/activity_horizontal_margin"
+			android:paddingRight="@dimen/activity_horizontal_margin"
+			android:paddingTop="@dimen/activity_vertical_margin">
+			<TextView
+				android:id="@+id/pedidoInsertActivityTextViewTitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="20dp"
+				android:layout_alignParentTop="true"
+				android:text="@string/activity_title_pedido_insert"
+				android:textStyle="bold"
+				android:textAppearance="?android:attr/textAppearanceMedium" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_below="@id/pedidoInsertActivityTextViewTitle">
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/pedidoInsertActivityLabelJBAttributeTextViewLabelCliente"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_pedido_attribute_cliente"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:padding="1dp"
+					android:background="#cccccc"					android:onClick="openSelectionObjectCliente">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:background="#ffffff"
+						android:layout_weight="1"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/pedidoInsertActivityJBAttributeTextViewObjectCliente"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:padding="5dp"
+							android:layout_weight="1"
+							android:text="@string/element_action_select"
+							android:textStyle="italic"
+							android:textAppearance="?android:attr/textAppearanceMedium" />
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:src="@android:drawable/ic_menu_search" />
+					</LinearLayout>
+				</LinearLayout>
+		</LinearLayout>
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/pedidoInsertActivityLabelJBAttributeTextViewLabelData"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_pedido_attribute_data"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<EditText
+					android:id="@+id/pedidoInsertActivityJBAttributeEditTextData"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:inputType=""
+					android:onClick="selectDate"
+					android:focusableInTouchMode="false"
+					android:hint=""
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+		</LinearLayout>
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/pedidoInsertActivityLabelJBAttributeTextViewLabelSituacao"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_pedido_attribute_situacao"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<Spinner
+					android:id="@+id/pedidoInsertActivityJBAttributeSpinnerSituacao"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:text="" />
+		</LinearLayout>
+						<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:orientation="vertical" >
+				<TextView
+					android:id="@+id/pedidoInsertActivityLabelJBAttributeTextViewLabelItens"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/action_label_class_pedido_attribute_itens"
+					android:textStyle="bold"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginBottom="2dp"
+					android:background="@android:color/darker_gray" />
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:padding="1dp"
+					android:background="#cccccc">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:background="#ffffff"
+						android:layout_weight="1"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/pedidoInsertActivityJBAttributeTextViewCollectionItens"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:padding="5dp"
+							android:layout_weight="1"
+							android:text="@string/element_action_collection"
+							android:textStyle="italic"
+							android:textAppearance="?android:attr/textAppearanceMedium" />
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:src="@android:drawable/ic_menu_more" />
+					</LinearLayout>
+				</LinearLayout>
+		</LinearLayout>
+			</LinearLayout>
+		</RelativeLayout>
+	</ScrollView>
+</RelativeLayout>

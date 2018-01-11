@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<date-formats>
+    <date-format>yyyy-MM-dd HH:mm:ss</date-format>
+
+    <date-format>yyyy-MM-dd HH:mm:ss.S z</date-format>
+    <date-format>yyyy-MM-dd G HH:mm:ss.S z</date-format>
+    <date-format>yyyy-MM-dd HH:mm:ss.S z</date-format>
+    <date-format>yyyy-MM-dd HH:mm:ss.S a</date-format>
+    <date-format>yyyy-MM-dd HH:mm:ssz</date-format>
+    <date-format>yyyy-MM-dd HH:mm:ss z</date-format>
+    <date-format>yyyy-MM-dd'T'HH:mm:ss.SX</date-format>
+    <date-format>yyyy-MM-dd'T'HH:mm:ssX</date-format>
+    <date-format>yyyy-MM-dd'T'HH:mmX</date-format>
+    <date-format>yyyy-MM-dd HH:mm:ssa</date-format>
+
+    <date-format>yyyy-MM-dd</date-format>
+    <date-format>dd/MM/yyyy</date-format>
+    <date-format>HH:mm:ss</date-format>
+</date-formats>

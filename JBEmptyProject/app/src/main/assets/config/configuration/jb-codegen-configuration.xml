@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jb-codegen-configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="../schema/jb-codegen-configuration.xsd">
+	
+	<!-- Properties -->
+	<property name="code-generation-enabled" value="true"/>
+	<property name="mapping-type" value="xml"/>
+	
+	<!-- Mapping Files -->
+	<mapping resource="jb-codegen-mapping.xml"/>
+	
+</jb-codegen-configuration>

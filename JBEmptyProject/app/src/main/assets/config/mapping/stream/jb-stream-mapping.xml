@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jb-stream-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../schema/jb-stream-mapping.xsd">
+	<entity class="org.jb.model.Produto">
+		<stream-entity collectionName="produtoes" name="produto" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<stream-attribute>
+				<name>id</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="descricao" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<stream-attribute>
+				<name>descricao</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="valor" type="java.lang.Double"
+			enclosing-type="java.lang.Double">
+			<stream-attribute>
+				<name>valor</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="catalogos" type="java.util.List"
+			enclosing-type="org.jb.model.Catalogo">
+			<stream-transient></stream-transient>
+		</attribute>
+	</entity>
+	<entity class="org.jb.model.Catalogo">
+		<stream-entity collectionName="catalogoes" name="catalogo" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<stream-attribute>
+				<name>id</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="nome" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<stream-attribute>
+				<name>nome</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="descricao" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<stream-attribute>
+				<name>descricao</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="produtos" type="java.util.List"
+			enclosing-type="org.jb.model.Produto">
+			<stream-transient />
+		</attribute>
+	</entity>
+	<entity class="org.jb.model.Cliente">
+		<stream-entity collectionName="clientes" name="cliente" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<stream-attribute>
+				<name>id</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="nome" type="java.lang.String"
+			enclosing-type="java.lang.String">
+			<stream-attribute>
+				<name>nome</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="sexo" type="org.jb.model.Sexo"
+			enclosing-type="org.jb.model.Sexo">
+			<stream-element>
+				<name>sexo</name>
+			</stream-element>
+		</attribute>
+		<attribute name="dataNascimento" type="java.util.Date"
+			enclosing-type="java.util.Date">
+			<stream-attribute>
+				<name>dataDeNascimento</name>
+			</stream-attribute>
+			<stream-temporal>
+				<pattern>yyyy-MM-dd'T'HH:mm:ss</pattern>
+			</stream-temporal>
+		</attribute>
+		<attribute name="pedidos" type="java.util.List"
+			enclosing-type="org.jb.model.Pedido">
+			<stream-transient></stream-transient>
+		</attribute>
+	</entity>
+	<entity class="org.jb.model.Item">
+		<stream-entity collectionName="items" name="item" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<stream-attribute>
+				<name>id</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="pedido" type="org.jb.model.Pedido"
+			enclosing-type="org.jb.model.Pedido">
+			<stream-element>
+				<name>pedido</name>
+			</stream-element>
+		</attribute>
+		<attribute name="produto" type="org.jb.model.Produto"
+			enclosing-type="org.jb.model.Produto">
+			<stream-element>
+				<name>produto</name>
+			</stream-element>
+		</attribute>
+		<attribute name="quantidade" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<stream-attribute>
+				<name>quantidade</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="valor" type="java.lang.Double"
+			enclosing-type="java.lang.Double">
+			<stream-attribute>
+				<name>valor</name>
+			</stream-attribute>
+		</attribute>
+	</entity>
+	<entity class="org.jb.model.Pedido">
+		<stream-entity collectionName="pedidos" name="pedido" />
+		<attribute name="id" type="java.lang.Integer"
+			enclosing-type="java.lang.Integer">
+			<stream-attribute>
+				<name>id</name>
+			</stream-attribute>
+		</attribute>
+		<attribute name="cliente" type="org.jb.model.Cliente"
+			enclosing-type="org.jb.model.Cliente">
+			<stream-element>
+				<name>cliente</name>
+			</stream-element>
+		</attribute>
+		<attribute name="data" type="java.util.Date" enclosing-type="java.util.Date">
+			<stream-attribute>
+				<name>data</name>
+			</stream-attribute>
+			<stream-temporal>
+				<pattern>yyyy-MM-dd'T'HH:mm:ss</pattern>
+			</stream-temporal>
+		</attribute>
+		<attribute name="situacao" type="org.jb.model.SituacaoPedido"
+			enclosing-type="org.jb.model.SituacaoPedido">
+			<stream-element>
+				<name>situacao</name>
+			</stream-element>
+		</attribute>
+		<attribute name="itens" type="java.util.List"
+			enclosing-type="org.jb.model.Item">
+			<stream-transient></stream-transient>
+		</attribute>
+	</entity>
+</jb-stream-mapping>
+

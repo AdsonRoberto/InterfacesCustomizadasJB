@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="jb-codegen-mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="entity" type="entity-type" 
+					minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="enumeration" type="enumeration-type" 
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="entity-type">
+		<xs:sequence>
+			<xs:element name="jb-entity" type="jb-entity-type" />
+			
+			<xs:element name="attribute" type="attribute-type"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="method" type="method-type" 
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="class" type="xs:string" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="enumeration-type">
+		<xs:sequence>
+			<xs:element name="jb-enumeration" type="jb-enumeration-type" />
+		</xs:sequence>
+		<xs:attribute name="enum" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="attribute-type">
+		<xs:sequence>
+			<xs:element name="jb-attribute" type="jb-attribute-type"
+				minOccurs="0" />
+				
+			<xs:element name="jb-temporal" type="jb-temporal-type"
+				minOccurs="0" />
+			<xs:element name="jb-large" type="jb-large-type"
+				minOccurs="0" />
+		</xs:sequence>
+		
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="enclosing-type" type="xs:string" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="method-type">
+		<xs:sequence>
+			<xs:element name="jb-action" type="jb-action-type"
+				minOccurs="0" />
+			<xs:element name="jb-description" type="jb-description-type"
+				minOccurs="0" />
+					
+			<xs:element name="parameter" type="parameter-type" 
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="enclosing-type" type="xs:string" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="parameter-type">
+		<xs:sequence>
+			<xs:element name="jb-parameter" type="jb-parameter-type"
+				minOccurs="0" />
+		</xs:sequence>
+		
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="enclosing-type" type="xs:string" use="required" />
+	</xs:complexType>
+	
+	<!-- DOMAIN -->
+
+	<xs:complexType name="jb-entity-type">
+		<xs:attribute name="label" type="xs:string" use="required" />
+		<xs:attribute name="collectionLabel" type="xs:string" use="required" />
+		<xs:attribute name="icon" type="xs:string" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="jb-enumeration-type"/>
+
+	<xs:complexType name="jb-attribute-type">
+		<xs:sequence>
+			<xs:element name="order" type="xs:integer" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="id" type="xs:boolean" />
+			<xs:element name="views">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="kind-view" type="kind-view-type"
+							minOccurs="1" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="jb-action-type">
+		<xs:sequence>
+			<xs:element name="order" type="xs:integer" />
+			<xs:element name="name" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="jb-parameter-type">
+		<xs:sequence>
+			<xs:element name="order" type="xs:integer" />
+			<xs:element name="name" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="kind-view-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ALL" />
+			<xs:enumeration value="INSERT" />
+			<xs:enumeration value="DETAIL" />
+			<xs:enumeration value="EDIT" />
+			<xs:enumeration value="FIND" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- VISUAL -->
+	
+	<xs:complexType name="jb-large-type"/>
+	
+	<xs:complexType name="jb-description-type">
+		<xs:sequence>
+			<xs:element name="value" type="description-type" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="jb-temporal-type">
+		<xs:sequence>
+			<xs:element name="value" type="temporal-type" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="description-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PRIMARY" />
+			<xs:enumeration value="SECONDARY" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="temporal-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DATE" />
+			<xs:enumeration value="TIME" />
+			<xs:enumeration value="TIMESTAMP" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema> 

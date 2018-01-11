@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<persistence>
+    <type>SQLITE</type>
+    <database>DEFAULT_DB</database>
+    <version>1</version>
+    <rebuild>0</rebuild>
+</persistence>

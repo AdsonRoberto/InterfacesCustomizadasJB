@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="app.jb.generated.ItemListActivity">
+		<item
+			android:id="@+id/menu_list_item_activity_action_new"
+			android:orderInCategory="100"
+			android:title="@string/menu_action_new"
+		/>
+		<item
+			android:id="@+id/menu_list_item_activity_action_find"
+			android:orderInCategory="100"
+			android:title="@string/menu_action_find"
+		/>
+</menu>

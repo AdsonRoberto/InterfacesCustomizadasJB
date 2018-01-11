@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.jb.generated">
+
+	<uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+		android:logo="@drawable/ic_launcher">>
+		<activity
+			android:name="app.jb.generated.ProjectListActivity"
+			android:label="@string/app_name" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity
+			android:name="app.jb.generated.ClienteInsertActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ClienteDetailActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ClienteEditActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ClienteFindActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ClienteListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ClienteJoinTablePedidoListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ProdutoInsertActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ProdutoDetailActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ProdutoEditActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ProdutoFindActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ProdutoListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ProdutoJoinTableCatalogoListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.PedidoInsertActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.PedidoDetailActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.PedidoEditActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.PedidoFindActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.PedidoListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.PedidoJoinTableItemListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.CatalogoInsertActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.CatalogoDetailActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.CatalogoEditActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.CatalogoFindActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.CatalogoListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.CatalogoJoinTableProdutoListActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ItemInsertActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ItemDetailActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ItemEditActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ItemFindActivity"
+			android:label="@string/app_name" >
+		</activity>
+		<activity
+			android:name="app.jb.generated.ItemListActivity"
+			android:label="@string/app_name" >
+		</activity>
+    </application>
+
+</manifest>

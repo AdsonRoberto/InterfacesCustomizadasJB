@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JBAnnotation/JBAnnotation.iml" filepath="$PROJECT_DIR$/JBAnnotation/JBAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBAnnotation/JBAnnotation.iml" filepath="$PROJECT_DIR$/JBAnnotation/JBAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBAnnotation/JBAnnotation.iml" filepath="$PROJECT_DIR$/JBAnnotation/JBAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" filepath="$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" filepath="$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" filepath="$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" filepath="$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" filepath="$PROJECT_DIR$/JBCodeGen/JBCodeGen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBEmptyProject.iml" filepath="$PROJECT_DIR$/JBEmptyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBEmptyProject.iml" filepath="$PROJECT_DIR$/JBEmptyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBEmptyProject.iml" filepath="$PROJECT_DIR$/JBEmptyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBEmptyProject.iml" filepath="$PROJECT_DIR$/JBEmptyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBEmptyProject.iml" filepath="$PROJECT_DIR$/JBEmptyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistence/JBPersistence.iml" filepath="$PROJECT_DIR$/JBPersistence/JBPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistence/JBPersistence.iml" filepath="$PROJECT_DIR$/JBPersistence/JBPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistence/JBPersistence.iml" filepath="$PROJECT_DIR$/JBPersistence/JBPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistence/JBPersistence.iml" filepath="$PROJECT_DIR$/JBPersistence/JBPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistence/JBPersistence.iml" filepath="$PROJECT_DIR$/JBPersistence/JBPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistenceAnnotation/JBPersistenceAnnotation.iml" filepath="$PROJECT_DIR$/JBPersistenceAnnotation/JBPersistenceAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBPersistenceAnnotation/JBPersistenceAnnotation.iml" filepath="$PROJECT_DIR$/JBPersistenceAnnotation/JBPersistenceAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStream/JBStream.iml" filepath="$PROJECT_DIR$/JBStream/JBStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStream/JBStream.iml" filepath="$PROJECT_DIR$/JBStream/JBStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStream/JBStream.iml" filepath="$PROJECT_DIR$/JBStream/JBStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStream/JBStream.iml" filepath="$PROJECT_DIR$/JBStream/JBStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStream/JBStream.iml" filepath="$PROJECT_DIR$/JBStream/JBStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStreamAnnotation/JBStreamAnnotation.iml" filepath="$PROJECT_DIR$/JBStreamAnnotation/JBStreamAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBStreamAnnotation/JBStreamAnnotation.iml" filepath="$PROJECT_DIR$/JBStreamAnnotation/JBStreamAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>

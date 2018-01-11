@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="jb-stream-mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="entity" type="entity-type" 
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="entity-type">
+		<xs:sequence>
+			<xs:element name="stream-entity" type="stream-entity-type" />
+			<xs:element name="attribute" type="attribute-type"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="class" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="attribute-type">
+		<xs:sequence>
+			<xs:element name="stream-attribute" type="stream-attribute-type"
+				minOccurs="0" />
+			<xs:element name="stream-element" type="stream-element-type"
+				minOccurs="0" />
+			<xs:element name="stream-enumerated" type="stream-enumerated-type"
+				minOccurs="0" />
+			<xs:element name="stream-temporal" type="stream-temporal-type"
+				minOccurs="0" />
+			<xs:element name="stream-transient" type="stream-transient-type"
+				minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="enclosing-type" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="stream-entity-type">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="collectionName" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="stream-attribute-type">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="stream-element-type">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="stream-enumerated-type">
+		<xs:sequence>
+			<xs:element name="value" type="enum-type" default="STRING"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="stream-temporal-type">
+		<xs:sequence>
+			<xs:element name="pattern" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="stream-transient-type"/>
+	
+	<xs:simpleType name="enum-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STRING" />
+			<xs:enumeration value="ORDINAL" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema> 

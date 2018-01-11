@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="jb-persistence-mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="entity" type="entity-type" 
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="entity-type">
+		<xs:sequence>
+			<xs:element name="web-entity" type="web-entity-type" />
+			<xs:element name="attribute" type="attribute-type"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="method" type="method-type" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="class" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="attribute-type">
+		<xs:sequence>
+			<xs:element name="web-aggregation" type="web-aggregation-type"
+				minOccurs="0" />
+			<xs:element name="web-composition" type="web-composition-type"
+				minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="enclosing-type" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="method-type">
+		<xs:sequence>
+			<xs:element name="web-action" type="web-action-type"
+				minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="enclosing-type" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="web-entity-type">
+		<xs:sequence>
+			<xs:element name="insert" type="request-type" />
+			<xs:element name="update" type="request-type" />
+			<xs:element name="delete" type="request-type" />
+			<xs:element name="find" type="request-type" />
+			<xs:element name="findById" type="request-type" />
+			<xs:element name="findAll" type="request-type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="web-aggregation-type">
+		<xs:sequence>
+			<xs:element name="insert" type="request-type" />
+			<xs:element name="delete" type="request-type" />
+			<xs:element name="list" type="request-type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="web-composition-type">
+		<xs:sequence>
+			<xs:element name="list" type="request-type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="web-action-type">
+		<xs:sequence>
+			<xs:element name="request" type="request-type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="request-type">
+		<xs:sequence>
+			<xs:element name="path" type="xs:string" />
+			<xs:element name="method" type="http-method-type"
+				minOccurs="0" />
+			<xs:element name="consumedType" type="text-type"
+				minOccurs="0" />
+			<xs:element name="producedType" type="text-type"
+				minOccurs="0" />
+			<xs:element name="pathParameters" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="pathParam" type="parameter-type"
+							minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="queryParameters" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="queryParam" type="parameter-type"
+							minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="http-method-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GET" />
+			<xs:enumeration value="POST" />
+			<xs:enumeration value="PUT" />
+			<xs:enumeration value="DELETE" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="text-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="text/plain" />
+			<xs:enumeration value="text/xml" />
+			<xs:enumeration value="text/json" />
+			<xs:enumeration value="application/xml" />
+			<xs:enumeration value="application/json" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="parameter-type">
+		<xs:sequence>
+			<xs:element name="param" type="xs:string" />
+			<xs:element name="jb-text-value" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema> 

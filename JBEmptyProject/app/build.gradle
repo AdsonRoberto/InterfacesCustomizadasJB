@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
+    defaultConfig {
+        applicationId "app.jb.generated"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.0.1'
+    compile 'com.android.support:support-core-utils:26.0.1'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/JBCodeGen.jar')
+    compile files('libs/xstream-1.4.7.jar')
+    compile project(':JBStream')
+    compile project(':JBPersistence')
+}
+
+/**
+ *
+ * Declaring Tasks
+ *
+ * */
+
+/** Annotation Processor Compile and Copy Task */
+
+task copyJBCodeGenJar(type: Copy) {
+    from '../JBCodeGen/build/libs/JBCodeGen.jar'
+    into 'libs/'
+}
+
+task copyJBPersistenceJar(type: Copy) {
+    from('../JBPersistence/build/intermediates/bundles/debug/')
+    into('libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'JBPersistence.jar')
+}
+
+task copyJBStreamJar(type: Copy) {
+    from('../JBStream/build/intermediates/bundles/debug/')
+    into('libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'JBStream.jar')
+}
+
+copyJBCodeGenJar.dependsOn(':JBCodeGen:build')
+copyJBPersistenceJar.dependsOn(copyJBCodeGenJar)
+copyJBStreamJar.dependsOn(copyJBPersistenceJar)
+preBuild.dependsOn(copyJBStreamJar)
+
+/** Custom Compile Task */
+
+task generateJustBusinessClasses(type: JavaCompile) {
+    source = fileTree(dir: 'src/main/java', include: '**/*.java', exclude: '**app/jb/generated**')
+    destinationDir = new File("app/src/main")
+    classpath = files(configurations.compile, android.bootClasspath)
+
+    options.compilerArgs = [
+            "-proc:only",
+            "-processor", "org.jb.codegen.processor.JBProcessor"
+    ]
+
+    options.sourcepath = fileTree(dir: 'src/main/java', include: '**/*.java', exclude: '**app/jb/generated**')
+    options.deprecation = false
+    options.incremental = false
+    options.failOnError = false
+    options.warnings = false
+    options.verbose = false
+    options.bootClasspath = android.bootClasspath
+}
+
+generateJustBusinessClasses.dependsOn(':app:prepareDebugDependencies')
+tasks.whenTaskAdded { task ->
+    if (task.name == 'compileDebugAidl') {
+        task.dependsOn(generateJustBusinessClasses)
+    }
+}
