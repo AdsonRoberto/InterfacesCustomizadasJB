@@ -51,6 +51,15 @@ public class InsertActivityEntityGenerator extends EntityGenerator {
 
 		str.append("package app.jb.generated;\n");
 		str.append("\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando os Imports para mudar a cor da ActionBar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("import android.graphics.Color;\n");
+		str.append("import android.graphics.drawable.ColorDrawable;\n");
+		str.append("import android.support.v7.app.ActionBar;\n");
+		// -------------------------------------------------------------------------------------------------------
+
 		str.append("import android.os.AsyncTask;\n");
 		str.append("import android.os.Bundle;\n");
 		str.append("import android.support.v7.app.AppCompatActivity;\n");
@@ -140,6 +149,17 @@ public class InsertActivityEntityGenerator extends EntityGenerator {
 		str.append("    	super.onCreate(savedInstanceState);\n");
 		str.append("    	setContentView(R.layout." + activityResourceName.getClassLayoutResourceName(c, Operation.INSERT, dictionary) +");\n");
 		str.append("\n");
+
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor da ActionBar para Verde
+		// -------------------------------------------------------------------------------------------------------
+		str.append("		ActionBar bar = getSupportActionBar();\n");
+		str.append("		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(\"#689F38\")));\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
+
+
 		str.append("		obj = new " + this.c.getSimpleName() + "();\n");
 		str.append("\n");
 		if(c.getAttributesForInterface(KindView.INSERT).size() > 0) {
@@ -178,6 +198,20 @@ public class InsertActivityEntityGenerator extends EntityGenerator {
 		str.append("    }\n");
 		str.append("\n");
 
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando a acao do metodo do botao salvar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("	//Method onClickButtonSalvar\n");
+		str.append("\n");
+		str.append("	public void onClickSalvar(View view) {\n");
+		str.append("		save();\n");
+		str.append("		this.onBackPressed();\n");
+		str.append("	}\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
+
+
 		str.append("	//Dialog Methods\n");
 		str.append("\n");
 		str.append("	public void selectDate(View view) {\n");
@@ -198,6 +232,7 @@ public class InsertActivityEntityGenerator extends EntityGenerator {
 				str.append("			int index" + classe.getSimpleName() + " = data.getIntExtra(\"index" + classe.getSimpleName() + "\", 0);\n");
 				str.append("			if(index" + classe.getSimpleName() + " > 0) {\n");
 				str.append("				getIntent().putExtra(\"index" + classe.getSimpleName() + "\", index" + classe.getSimpleName() + ");\n");
+				str.append("				dialogWidget = textViewObject" + classe.getSimpleName() + ";\n");
 				//TODO
 				str.append("				new SendActivityResult" + classe.getSimpleName() + "RequestTask().execute();\n");
 				str.append("			}\n");
@@ -260,7 +295,15 @@ public class InsertActivityEntityGenerator extends EntityGenerator {
 		str.append("		}\n");
 		str.append("\n");
 		str.append("		protected void onPostExecute(String result) {\n");
-		str.append("			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT);\n");
+
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando Toast
+		// -------------------------------------------------------------------------------------------------------
+		str.append("			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();\n");
+		// -------------------------------------------------------------------------------------------------------
+
+
 		str.append("		}\n");
 		str.append("	}\n");
 

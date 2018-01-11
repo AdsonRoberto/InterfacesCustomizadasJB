@@ -42,6 +42,15 @@ public class ListActivityEntityGenerator extends EntityGenerator {
 
 		str.append("package app.jb.generated;\n");
 		str.append("\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando os Imports para mudar a cor da ActionBar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("import android.graphics.Color;\n");
+		str.append("import android.graphics.drawable.ColorDrawable;\n");
+		str.append("import android.support.v7.app.ActionBar;\n");
+		// -------------------------------------------------------------------------------------------------------
+
 		str.append("import android.os.AsyncTask;\n");
 		str.append("import android.os.Bundle;\n");
 		str.append("import android.support.v7.app.AppCompatActivity;\n");
@@ -84,6 +93,16 @@ public class ListActivityEntityGenerator extends EntityGenerator {
 		str.append("    @Override\n");
 		str.append("    protected void onCreate(Bundle savedInstanceState) {\n");
 		str.append("    	super.onCreate(savedInstanceState);\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor da ActionBar para Verde
+		// -------------------------------------------------------------------------------------------------------
+		str.append("		ActionBar bar = getSupportActionBar();\n");
+		str.append("		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(\"#689F38\")));\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
+
+
 		str.append("    	TypeListView type = (TypeListView) getIntent().getSerializableExtra(\"TYPE_LIST_VIEW\");\n");
 		str.append("    	int list_activity_resource = 0;\n");
 		str.append("    	int list_activity_list_fragment_resource = 0;\n");
@@ -329,7 +348,7 @@ public class ListActivityEntityGenerator extends EntityGenerator {
 
 		str.append("	private class SendRemoveRequestTask extends AsyncTask<String, Integer, String> {\n");
 		str.append("		protected String doInBackground(String... urls) {\n");
-		str.append("			int index" + c.getSimpleName() + " = getIntent().getIntExtra(\"index" + c.getSimpleName() + "\", 0);\n");
+		str.append("			int index" + c.getSimpleName() + " = getIntent().getIntExtra(\"index\", 0);\n");
 		str.append("			try {\n");
 		str.append("				WebDAO dao = new WebDAO();\n");
 		str.append("				return dao.delete(" + c.getSimpleName() + ".class, index" + c.getSimpleName() + ");\n");
@@ -347,7 +366,9 @@ public class ListActivityEntityGenerator extends EntityGenerator {
 		str.append("		}\n");
 		str.append("\n");
 		str.append("		protected void onPostExecute(String result) {\n");
-		str.append("			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT);\n");
+
+		//acrescentando o .show();
+		str.append("			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();\n");
 		str.append("		}\n");
 		str.append("	}\n");
 		str.append("\n");

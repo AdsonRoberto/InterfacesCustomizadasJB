@@ -45,7 +45,7 @@ public class InsertActivityMenuEntityGenerator extends EntityGenerator {
 		str.append("			android:icon=\"@android:drawable/ic_menu_save\"\n");
 		str.append("			android:orderInCategory=\"100\"\n");
 		str.append("			android:title=\"@string/" + activityResourceName.getClassMenuActionStringResourceName(MenuAction.SAVE) + "\"\n");
-		//str.append("			android:showAsAction=\"ifRoom\"\n");
+		str.append("			app:showAsAction=\"always\"\n");
 		str.append("		/>\n");
 		str.append("</menu>\n");
 	}

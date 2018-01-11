@@ -200,6 +200,7 @@ public class EditActivityEntityGenerator extends EntityGenerator {
 				str.append("			int index" + classe.getSimpleName() + " = data.getIntExtra(\"index" + classe.getSimpleName() + "\", 0);\n");
 				str.append("			if(index" + classe.getSimpleName() + " > 0) {\n");
 				str.append("				getIntent().putExtra(\"index" + classe.getSimpleName() + "\", index" + classe.getSimpleName() + ");\n");
+				str.append("				dialogWidget = textViewObject" + classe.getSimpleName() + ";\n");
 				//TODO
 				str.append("				new SendActivityResult" + classe.getSimpleName() + "RequestTask().execute();\n");
 				str.append("			}\n");

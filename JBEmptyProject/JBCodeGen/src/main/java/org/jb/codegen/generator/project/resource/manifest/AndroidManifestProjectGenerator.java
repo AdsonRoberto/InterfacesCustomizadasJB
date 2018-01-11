@@ -76,6 +76,13 @@ public class AndroidManifestProjectGenerator extends ProjectGenerator {
 				if(dictionary.getTotalClasses() > 0) {
 					for(ClassDescription c : dictionary.getClassValues()) {
 						strMiddle.append("		<activity\n");
+
+						// -------------------------------------------------------------------------------------------------------
+						// Adicionando seta para voltar na ActionBar da tela de Insert
+						// -------------------------------------------------------------------------------------------------------
+						strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+						// -------------------------------------------------------------------------------------------------------
+
 						strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.INSERT, dictionary) + "\"\n");
 						strMiddle.append("			android:label=\"@string/app_name\" >\n");
 						strMiddle.append("		</activity>\n");
@@ -88,10 +95,23 @@ public class AndroidManifestProjectGenerator extends ProjectGenerator {
 						strMiddle.append("			android:label=\"@string/app_name\" >\n");
 						strMiddle.append("		</activity>\n");
 						strMiddle.append("		<activity\n");
+
+						// -------------------------------------------------------------------------------------------------------
+						// Adicionando seta para voltar na ActionBar da tela de Find
+						// -------------------------------------------------------------------------------------------------------
+						strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+						// -------------------------------------------------------------------------------------------------------
 						strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.FIND, dictionary) + "\"\n");
 						strMiddle.append("			android:label=\"@string/app_name\" >\n");
 						strMiddle.append("		</activity>\n");
 						strMiddle.append("		<activity\n");
+
+						// -------------------------------------------------------------------------------------------------------
+						// Adicionando seta para voltar na ActionBar da tela de List
+						// -------------------------------------------------------------------------------------------------------
+						strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+						// -------------------------------------------------------------------------------------------------------
+
 						strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
 						strMiddle.append("			android:label=\"@string/app_name\" >\n");
 						strMiddle.append("		</activity>\n");
@@ -145,6 +165,13 @@ public class AndroidManifestProjectGenerator extends ProjectGenerator {
 					if(dictionary.getTotalClasses() > 0) {
 						for(ClassDescription c : dictionary.getClassValues()) {
 							strMiddle.append("		<activity\n");
+
+							// -------------------------------------------------------------------------------------------------------
+							// Adicionando seta para voltar na ActionBar da tela de Insert
+							// -------------------------------------------------------------------------------------------------------
+							strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+							// -------------------------------------------------------------------------------------------------------
+
 							strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.INSERT, dictionary) + "\"\n");
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");
@@ -157,10 +184,23 @@ public class AndroidManifestProjectGenerator extends ProjectGenerator {
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");
 							strMiddle.append("		<activity\n");
+							// -------------------------------------------------------------------------------------------------------
+							// Adicionando seta para voltar na ActionBar da tela de Find
+							// -------------------------------------------------------------------------------------------------------
+							strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+							// -------------------------------------------------------------------------------------------------------
+
 							strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.FIND, dictionary) + "\"\n");
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");
 							strMiddle.append("		<activity\n");
+
+							// -------------------------------------------------------------------------------------------------------
+							// Adicionando seta para voltar na ActionBar da tela de List
+							// -------------------------------------------------------------------------------------------------------
+							strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+							// -------------------------------------------------------------------------------------------------------
+
 							strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");
@@ -216,6 +256,13 @@ public class AndroidManifestProjectGenerator extends ProjectGenerator {
 					if(dictionary.getTotalClasses() > 0) {
 						for(ClassDescription c : dictionary.getClassValues()) {
 							strMiddle.append("		<activity\n");
+
+							// -------------------------------------------------------------------------------------------------------
+							// Adicionando seta para voltar na ActionBar da tela de Insert
+							// -------------------------------------------------------------------------------------------------------
+							strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+							// -------------------------------------------------------------------------------------------------------
+
 							strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.INSERT, dictionary) + "\"\n");
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");
@@ -228,6 +275,13 @@ public class AndroidManifestProjectGenerator extends ProjectGenerator {
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");
 							strMiddle.append("		<activity\n");
+
+							// -------------------------------------------------------------------------------------------------------
+							// Adicionando seta para voltar na ActionBar da tela de Find
+							// -------------------------------------------------------------------------------------------------------
+							strMiddle.append("			android:parentActivityName=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.LIST, dictionary) + "\"\n");
+							// -------------------------------------------------------------------------------------------------------
+
 							strMiddle.append("			android:name=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.FIND, dictionary) + "\"\n");
 							strMiddle.append("			android:label=\"@string/app_name\" >\n");
 							strMiddle.append("		</activity>\n");

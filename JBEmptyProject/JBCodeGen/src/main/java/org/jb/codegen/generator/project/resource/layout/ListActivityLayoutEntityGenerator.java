@@ -44,6 +44,12 @@ public class ListActivityLayoutEntityGenerator extends EntityGenerator {
 		//TODO Ajustes de Largura
 		str.append("	android:layout_width=\"match_parent\"\n");
 		str.append("	android:layout_height=\"match_parent\"\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor do Background
+		// -------------------------------------------------------------------------------------------------------
+		str.append("	android:background=\"#DCEDC8\"\n");
+		// -------------------------------------------------------------------------------------------------------
 		
 		//TODO Ajustes de Margens
 		str.append("	android:paddingBottom=\"@dimen/activity_vertical_margin\"\n");
@@ -65,6 +71,12 @@ public class ListActivityLayoutEntityGenerator extends EntityGenerator {
 		str.append("		android:text=\"@string/" + activityResourceName.getClassTitleStringResourceName(c, Operation.LIST, dictionary) + "\"\n");
 		str.append("		android:textStyle=\"bold\"\n");
 		str.append("		android:textAppearance=\"?android:attr/textAppearanceMedium\" />\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor do texto
+		// -------------------------------------------------------------------------------------------------------
+		str.append("				android:textColor=\"#212121\"\n");
+		// -------------------------------------------------------------------------------------------------------
 		
 		str.append("	<View\n");
 		str.append("		android:id=\"@+id/" + activityResourceName.getFragmentWidgetLineResourceName(c, Operation.LIST, dictionary) + "\"\n");

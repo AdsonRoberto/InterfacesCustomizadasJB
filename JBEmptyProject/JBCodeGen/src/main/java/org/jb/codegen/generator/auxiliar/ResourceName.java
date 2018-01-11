@@ -399,6 +399,13 @@ public abstract class ResourceName {
         str.append(strNivel + "			android:layout_width=\"match_parent\"\n");
         str.append(strNivel + "			android:layout_height=\"wrap_content\"\n");
         str.append(strNivel + "			android:text=\"@string/" + getClassAttributeLabelStringResourceName(attr) + "\"\n");
+
+        // -------------------------------------------------------------------------------------------------------
+        // Mudando a cor dos TextView's
+        // -------------------------------------------------------------------------------------------------------
+        str.append(strNivel + "			android:textColor=\"#757575\"\n");
+        // -------------------------------------------------------------------------------------------------------
+
         str.append(strNivel + "			android:textStyle=\"bold\"\n");
         str.append(strNivel + "			android:textAppearance=\"?android:attr/textAppearanceSmall\" />\n");
 
@@ -407,7 +414,12 @@ public abstract class ResourceName {
         str.append(strNivel + "			android:layout_height=\"1dp\"\n");
         str.append(strNivel + "			android:layout_marginTop=\"2dp\"\n");
         str.append(strNivel + "			android:layout_marginBottom=\"2dp\"\n");
-        str.append(strNivel + "			android:background=\"@android:color/darker_gray\" />\n");
+
+        // -------------------------------------------------------------------------------------------------------
+        // Mudando a cor do Divider
+        // -------------------------------------------------------------------------------------------------------
+        str.append(strNivel + "			android:background=\"#BDBDBD\" />\n");
+        // -------------------------------------------------------------------------------------------------------
 
         /** Field */
 
@@ -443,8 +455,20 @@ public abstract class ResourceName {
                 str.append(strNivel + "			android:focusableInTouchMode=\"false\"\n");
             }
 
-            str.append(strNivel + "			android:hint=\"\"\n");
+            // -------------------------------------------------------------------------------------------------------
+            // Adicionando Hint's
+            // -------------------------------------------------------------------------------------------------------
+            str.append(strNivel + "			android:hint=\"DIGITE AQUI O(A) " + attr.getName().toUpperCase() + "\"\n");
+            // -------------------------------------------------------------------------------------------------------
+
+
             str.append(strNivel + "			android:textAppearance=\"?android:attr/textAppearanceMedium\" />\n");
+
+            // -------------------------------------------------------------------------------------------------------
+            // Mudando a cor dos textos do TextViews
+            // -------------------------------------------------------------------------------------------------------
+            str.append(strNivel + "			android:textColor=\"#757575\" />\n");
+            // -------------------------------------------------------------------------------------------------------
 
         }
         else if(attr.getType().equals("java.lang.Boolean") || attr.getType().equals("boolean")) {

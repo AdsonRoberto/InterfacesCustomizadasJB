@@ -47,6 +47,15 @@ public class FindActivityEntityGenerator extends EntityGenerator {
 		ActivityResourceName activityResourceName = new ActivityResourceName();
 
 		str.append("package app.jb.generated;\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando os Imports para mudar a cor da ActionBar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("import android.graphics.Color;\n");
+		str.append("import android.graphics.drawable.ColorDrawable;\n");
+		str.append("import android.support.v7.app.ActionBar;\n");
+		// -------------------------------------------------------------------------------------------------------
+
 		str.append("\n");
 		str.append("import android.os.AsyncTask;\n");
 		str.append("import android.os.Bundle;\n");
@@ -143,7 +152,15 @@ public class FindActivityEntityGenerator extends EntityGenerator {
 		str.append("    	super.onCreate(savedInstanceState);\n");
 		str.append("    	setContentView(R.layout." + activityResourceName.getClassLayoutResourceName(c, Operation.FIND, dictionary) +");\n");
 		str.append("\n");
-		
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor da ActionBar para Verde
+		// -------------------------------------------------------------------------------------------------------
+		str.append("		ActionBar bar = getSupportActionBar();\n");
+		str.append("		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(\"#689F38\")));\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
+
+
 		//TODO Inicializar Checkbox dos Fields do Formulário
 		if(c.getAttributesForInterface(KindView.FIND).size() > 0) {
 			for(AttributeDescription attr : c.getAttributesForInterface(KindView.FIND)) {
@@ -184,6 +201,18 @@ public class FindActivityEntityGenerator extends EntityGenerator {
 		str.append("    	return super.onOptionsItemSelected(item);\n");
 		str.append("    }\n");
 		str.append("\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando a acao do metodo do botao buscar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("	//Method onClickButtonBuscar\n");
+		str.append("\n");
+		str.append("	public void onClickBuscar(View view) {\n");
+		str.append("		find();\n");
+		str.append("		this.onBackPressed();\n");
+		str.append("	}\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
 		
 		str.append("	//Dialog Methods\n");
 		str.append("\n");
@@ -304,6 +333,13 @@ public class FindActivityEntityGenerator extends EntityGenerator {
 				str.append("		}\n");
 				str.append("\n");
 				str.append("		protected void onPostExecute(String result) {\n");
+
+				// -------------------------------------------------------------------------------------------------------
+				// Adicionando Toast
+				// -------------------------------------------------------------------------------------------------------
+				str.append("			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();\n");
+				// -------------------------------------------------------------------------------------------------------
+
 				str.append("			((TextView) dialogWidget).setText(result);\n");
 				str.append("		}\n");
 				str.append("	}\n");

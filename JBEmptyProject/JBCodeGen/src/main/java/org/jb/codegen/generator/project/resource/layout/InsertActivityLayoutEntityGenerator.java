@@ -45,9 +45,16 @@ public class InsertActivityLayoutEntityGenerator extends EntityGenerator {
 		
 		//TODO Ajustes de Largura
 		str.append("	android:layout_width=\"match_parent\"\n");
-		str.append("	android:layout_height=\"match_parent\"\n");		
-		str.append("	android:orientation=\"vertical\"\n");		
-		
+		str.append("	android:layout_height=\"match_parent\"\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor do Background
+		// -------------------------------------------------------------------------------------------------------
+		str.append("	android:background=\"#DCEDC8\"\n");
+		// -------------------------------------------------------------------------------------------------------
+
+		str.append("	android:orientation=\"vertical\"\n");
+
 		//TODO ajustes de Contexto
 		str.append("	tools:context=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.INSERT, dictionary) + "\" >\n");
 		str.append("\n");
@@ -72,6 +79,13 @@ public class InsertActivityLayoutEntityGenerator extends EntityGenerator {
 		str.append("				android:layout_marginBottom=\"20dp\"\n");		
 		str.append("				android:layout_alignParentTop=\"true\"\n");
 		str.append("				android:text=\"@string/" + activityResourceName.getClassTitleStringResourceName(c, Operation.INSERT, dictionary) + "\"\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor do texto
+		// -------------------------------------------------------------------------------------------------------
+		str.append("				android:textColor=\"#212121\"\n");
+		// -------------------------------------------------------------------------------------------------------
+
 		str.append("				android:textStyle=\"bold\"\n");
 		str.append("				android:textAppearance=\"?android:attr/textAppearanceMedium\" />\n");
 		
@@ -84,8 +98,27 @@ public class InsertActivityLayoutEntityGenerator extends EntityGenerator {
 		for (AttributeDescription attr : c.getAttributesForInterface(KindView.INSERT)) {
 			str.append("				" + activityResourceName.getWidgetType(attr, Operation.INSERT, dictionary, 2));
 		}
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando o Botão de Salvar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("			<Button\n");
+		str.append("			    android:id=\"@+id/btnSalvar\"\n");
+		str.append("			    android:layout_width=\"wrap_content\"\n");
+		str.append("			    android:layout_height=\"match_parent\"\n");
+		str.append("		    	android:layout_gravity=\"center\"\n");
+		str.append("	    		android:layout_marginTop=\"25dp\"\n");
+		str.append("		    	android:backgroundTint=\"#689F38\"\n");
+		str.append("			    android:onClick=\"onClickSalvar\"\n");
+		str.append("    			android:text=\"SALVAR CADASTRO\"\n");
+		str.append("	    		android:textAppearance=\"@android:style/TextAppearance.Medium\"\n");
+		str.append("		    	android:textColor=\"@android:color/white\"\n");
+		str.append("			    android:textStyle=\"bold\" />\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
+
 		str.append("			</LinearLayout>\n");
-		
+
 		str.append("		</RelativeLayout>\n");
 		str.append("	</ScrollView>\n");
 		

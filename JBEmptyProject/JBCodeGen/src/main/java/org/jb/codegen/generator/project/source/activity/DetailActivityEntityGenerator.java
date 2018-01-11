@@ -286,7 +286,7 @@ public class DetailActivityEntityGenerator extends EntityGenerator {
 
 					if (attr.isAnnotatedWith(WebAggregation.class)
 							|| attr.isXmlAnnotatedWith(XMLWebAggregation.class)) {
-						str.append("	public void " + activityResourceName.getClassElementWidgetActionStringResourceName(attr, Operation.DETAIL, dictionary, TypedElementAction.DETAIL) + "(View view) {\n");
+						str.append("	public void " + activityResourceName.getClassElementWidgetActionStringResourceName(attr, Operation.DETAIL, dictionary, TypedElementAction.COLLECTION) + "(View view) {\n");
 						str.append("		dialogWidget = view;\n");
 						str.append("		Intent intent = new Intent(this, " + c.getSimpleName() + "JoinTable" + targetClassInfo.getSimpleName() + "ListActivity.class);\n");
 
@@ -306,7 +306,7 @@ public class DetailActivityEntityGenerator extends EntityGenerator {
 					}
 					else if (attr.isAnnotatedWith(WebComposition.class)
 							|| attr.isXmlAnnotatedWith(XMLWebComposition.class)) {
-						str.append("	public void " + activityResourceName.getClassElementWidgetActionStringResourceName(attr, Operation.DETAIL, dictionary, TypedElementAction.DETAIL) + "(View view) {\n");
+						str.append("	public void " + activityResourceName.getClassElementWidgetActionStringResourceName(attr, Operation.DETAIL, dictionary, TypedElementAction.COLLECTION) + "(View view) {\n");
 						str.append("		dialogWidget = view;\n");
 						str.append("		Intent intent = new Intent(this, " + targetClassInfo.getSimpleName() + "ListActivity.class);\n");
 

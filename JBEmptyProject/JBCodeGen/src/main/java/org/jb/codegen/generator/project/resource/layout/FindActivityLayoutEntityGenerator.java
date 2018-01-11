@@ -46,7 +46,13 @@ public class FindActivityLayoutEntityGenerator extends EntityGenerator {
 		//TODO Ajustes de Largura
 		str.append("	android:layout_width=\"match_parent\"\n");
 		str.append("	android:layout_height=\"match_parent\"\n");		
-		str.append("	android:orientation=\"vertical\"\n");		
+		str.append("	android:orientation=\"vertical\"\n");
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor do Background
+		// -------------------------------------------------------------------------------------------------------
+		str.append("	android:background=\"#DCEDC8\"\n");
+		// -------------------------------------------------------------------------------------------------------
 		
 		//TODO ajustes de Contexto
 		str.append("	tools:context=\"app.jb.generated." + activityResourceName.getClassName(c, Operation.FIND, dictionary) + "\" >\n");
@@ -74,7 +80,14 @@ public class FindActivityLayoutEntityGenerator extends EntityGenerator {
 		str.append("				android:text=\"@string/" + activityResourceName.getClassTitleStringResourceName(c, Operation.FIND, dictionary) + "\"\n");
 		str.append("				android:textStyle=\"bold\"\n");
 		str.append("				android:textAppearance=\"?android:attr/textAppearanceMedium\" />\n");
-		
+
+		// -------------------------------------------------------------------------------------------------------
+		// Mudando a cor do texto
+		// -------------------------------------------------------------------------------------------------------
+		str.append("				android:textColor=\"#212121\"\n");
+		// -------------------------------------------------------------------------------------------------------
+
+
 		//TODO Transformar os Atributos em Fields
 		str.append("			<LinearLayout\n");
 		str.append("				android:layout_width=\"match_parent\"\n");
@@ -84,6 +97,25 @@ public class FindActivityLayoutEntityGenerator extends EntityGenerator {
 		for (AttributeDescription attr : c.getAttributesForInterface(KindView.FIND)) {
 			str.append("				" + activityResourceName.getFindXMLWidget(attr, Operation.FIND, dictionary, 2));
 		}
+
+		// -------------------------------------------------------------------------------------------------------
+		// Adicionando o Botão de Salvar
+		// -------------------------------------------------------------------------------------------------------
+		str.append("			<Button\n");
+		str.append("			    android:id=\"@+id/btnBuscar\"\n");
+		str.append("			    android:layout_width=\"wrap_content\"\n");
+		str.append("			    android:layout_height=\"match_parent\"\n");
+		str.append("		    	android:layout_gravity=\"center\"\n");
+		str.append("	    		android:layout_marginTop=\"25dp\"\n");
+		str.append("		    	android:backgroundTint=\"#689F38\"\n");
+		str.append("			    android:onClick=\"onClickBuscar\"\n");
+		str.append("    			android:text=\"REALIZAR BUSCA\"\n");
+		str.append("	    		android:textAppearance=\"@android:style/TextAppearance.Medium\"\n");
+		str.append("		    	android:textColor=\"@android:color/white\"\n");
+		str.append("			    android:textStyle=\"bold\" />\n");
+		str.append("\n");
+		// -------------------------------------------------------------------------------------------------------
+
 		str.append("			</LinearLayout>\n");
 		
 		str.append("		</RelativeLayout>\n");

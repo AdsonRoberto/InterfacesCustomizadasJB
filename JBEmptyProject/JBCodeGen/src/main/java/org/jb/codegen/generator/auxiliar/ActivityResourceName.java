@@ -69,7 +69,7 @@ public class ActivityResourceName extends ResourceName {
             }
         }
         else if(attr.getType().equals("java.lang.Boolean") || attr.getType().equals("boolean")) {
-            str.append(getClassAttributeWidgetName(attr, dictionary) + ".isChecked().toString()");
+            str.append(getClassAttributeWidgetName(attr, dictionary) + /*".isChecked()*/ ".toString()");
         }
         else { //Enum ou Class
             if(dictionary.containsEnumWithKey(attr.getType())) {
